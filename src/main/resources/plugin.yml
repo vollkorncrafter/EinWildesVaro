@@ -1,0 +1,16 @@
+name: Varo
+version: ${project.version}
+main: de.vollkorn.varo.Varo
+api-version: 1.8
+
+commands:
+  tpa:
+    permissions: varo.plugin.TpaUsage
+  Start:
+    permissions: varo.plugin.StartTournament
+  Pos:
+    permission: varo.plugin.SpawnPos
+  Wr:
+    permissions: varo.plugin.WorldReset
+  Wb:
+    permissions: varo.plugin.setWb
