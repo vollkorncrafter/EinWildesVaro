@@ -25,8 +25,8 @@ public class StartCommand implements CommandExecutor {
     Timer timer = new Timer();
 
 
-    public boolean onCommand(CommandSender Player_Sender, Command command, String label, String[] args) {
-        if (Player_Sender instanceof Player) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (sender instanceof Player) {
             if(args.length == 1) {
                 World world = Bukkit.getWorld("VaroWorld");
                 WorldBorder border = world.getWorldBorder();
@@ -44,7 +44,7 @@ public class StartCommand implements CommandExecutor {
 
 
                 for (Player p : Bukkit.getOnlinePlayers()) {
-                    Location location = obj.spawnLocations.get(x);
+                    Location location = plugin.getLocationServices().getSpawnLocations().get(x);
                     p.teleport(location);
                     x += 1;
                 }

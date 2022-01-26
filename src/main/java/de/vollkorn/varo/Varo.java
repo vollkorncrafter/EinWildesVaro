@@ -3,7 +3,7 @@ package de.vollkorn.varo;
 import de.vollkorn.varo.commands.*;
 import de.vollkorn.varo.listeners.*;
 import de.vollkorn.varo.utils.InfoService;
-import de.vollkorn.varo.utils.LocationServices;
+import de.vollkorn.varo.utils.LocationService;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,7 +16,7 @@ public final class Varo extends JavaPlugin {
 
 
 
-    private LocationServices locationServices;
+    private LocationService locationServices;
 
     @Override
     public void onEnable() {
@@ -31,7 +31,7 @@ public final class Varo extends JavaPlugin {
 
 
         logger.info("loading services...");
-        locationServices = new LocationServices();
+        locationServices = new LocationService();
 
         this.getCommand("tpa").setExecutor(new TpaCommand());
         this.getCommand("start").setExecutor(new StartCommand(this));
@@ -49,7 +49,7 @@ public final class Varo extends JavaPlugin {
 
     }
 
-    public LocationServices getLocationServices() {
+    public LocationService getLocationServices() {
         return locationServices;
     }
 }

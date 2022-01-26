@@ -5,7 +5,7 @@ import org.bukkit.Location;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LocationServices {
+public class LocationService {
 
     private final List<Location> spawnLocations = new ArrayList<>();
 
