@@ -1,4 +1,4 @@
-package de.vollkorn.varo.listeners;
+package de.vollkorn.varo.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;

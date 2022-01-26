@@ -1,4 +1,4 @@
-package de.vollkorn.varo.listeners;
+package de.vollkorn.varo.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -6,7 +6,7 @@ import org.bukkit.WorldBorder;
 
 import java.util.TimerTask;
 
-public class shrinkBorder extends TimerTask {
+public class BorderService extends TimerTask {
 
     @Override
     public void run() {

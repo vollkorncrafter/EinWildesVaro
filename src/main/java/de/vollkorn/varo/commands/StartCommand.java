@@ -1,6 +1,7 @@
-package de.vollkorn.varo.listeners;
+package de.vollkorn.varo.commands;
 
 import de.vollkorn.varo.Varo;
+import de.vollkorn.varo.utils.BorderService;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -12,8 +13,14 @@ import org.bukkit.entity.Player;
 
 import java.util.Timer;
 
-public class Start implements CommandExecutor {
-    SpawnCommand obj = Varo.getInstance().getSpawncommand();
+public class StartCommand implements CommandExecutor {
+
+    private final Varo plugin;
+
+    public StartCommand(Varo plugin){
+        this.plugin = plugin;
+    }
+
     int x = 0;
     Timer timer = new Timer();
 
@@ -29,7 +36,7 @@ public class Start implements CommandExecutor {
                 System.out.println(time + " = time ");
                 long period = Long.parseLong(String.valueOf(time));
                 System.out.println(period);
-                timer.schedule(new shrinkBorder(),1, period);
+                timer.schedule(new BorderService(),1, period);
                 x = 0;
             }
 

@@ -1,5 +1,6 @@
-package de.vollkorn.varo.listeners;
+package de.vollkorn.varo.commands;
 
+import de.vollkorn.varo.Varo;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -8,18 +9,24 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SpawnCommand implements CommandExecutor {
 
-    List<Location> spawnLocations = new ArrayList<>();
+
+    private final Varo plugin;
     int PosCounter = 1;
 
-    public boolean onCommand(CommandSender Player_Sender, Command command, String label, String[] args) {
-        if (Player_Sender instanceof Player) {
+    public SpawnCommand(Varo plugin) {
+        this.plugin = plugin;
+    }
 
-            Location location = ((Player) Player_Sender).getLocation();
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (sender instanceof Player) {
+
+            Location location = ((Player) sender).getLocation();
+
+            List<Location> spawnLocations = plugin.getLocationServices().getSpawnLocations();
             spawnLocations.add(location);
             System.out.println(spawnLocations);
             Bukkit.broadcastMessage(ChatColor.AQUA + "Position " +  ChatColor.GREEN + " #" + PosCounter + ChatColor.AQUA + " set");

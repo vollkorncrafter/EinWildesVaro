@@ -1,18 +1,14 @@
-package de.vollkorn.varo.listeners;
+package de.vollkorn.varo.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.WorldBorder;
 import org.bukkit.entity.Player;
-import org.bukkit.scoreboard.DisplaySlot;
-import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.ScoreboardManager;
 
 import java.util.TimerTask;
 
-public class Infos extends TimerTask {
+public class InfoService extends TimerTask {
 
     @Override
     public void run() {
